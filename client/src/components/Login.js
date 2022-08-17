@@ -37,7 +37,7 @@ const Login = () => {
                 }
             );
             console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response));
+            console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
             setAuth({ user, pwd, roles, accessToken });
@@ -64,7 +64,7 @@ const Login = () => {
                 <section>
                     <h1 className='d-flex align-items-center justify-content-center'>You are logged in!</h1>
                     <br />
-                    <Navigate to="/" />
+                    <Navigate href="/Home" />
                 </section>
             ) : (
                 <section>

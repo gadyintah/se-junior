@@ -12,6 +12,7 @@ export default function Logout() {
 
 
 	const { setAuth } = useContext(AuthContext);
+	const test = setAuth;
 
 	Axios.get(LOGOUT_URL, {
 		withCredentials: true
@@ -19,9 +20,9 @@ export default function Logout() {
 	.then(function (response) {
 		console.log(response);
 		console.log(setAuth);
-		setAuth({accessToken: null});
+		// setAuth ({});
 		console.log(response);
-		console.log(setAuth.accessToken);
+		console.log('Set auth: ' + setAuth?.accessToken ?? "auth not defined");
 	})
 
 	// useEffect(() => {
@@ -47,8 +48,6 @@ export default function Logout() {
     // }
 
 	return(
-
 		<Navigate to="/login" />
-
 		)
 }
